@@ -16,7 +16,7 @@ const EditPost: React.FC = () => {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    UpdatePostAction(title, text, userId);
+    UpdatePostAction(Number(userId), title, text);
     history.push('/');
   };
 

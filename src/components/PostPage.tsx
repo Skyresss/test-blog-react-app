@@ -15,11 +15,10 @@ const PostPage: React.FC = () => {
   const postId = id.id;
   const { AddCommentAction, FindPostAction } = useActions();
   useEffect(() => {
-    FindPostAction(postId);
+    FindPostAction(Number(postId));
   }, [FindPostAction, postId]);
 
   const post: TypedPost = useTypedSelector(({ postsInfo: { post } }) => {
-    console.log(post);
     return post;
   });
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {

@@ -9,8 +9,6 @@ export const CreateNewPostAction =
       title,
       body,
     });
-
-    console.log(response);
     dispatch({
       type: ActionType.CREATE_NEW_POST,
       payload: {
@@ -37,13 +35,12 @@ export const DeletePostAction =
   };
 
 export const UpdatePostAction =
-  (title: string, body: string, id: number) =>
+  (id: number, title: string, body: string) =>
   async (dispatch: Dispatch<Action>) => {
     await api.put(`/posts/${id}`, {
       title,
       body,
     });
-    console.log(title, body);
     dispatch({
       type: ActionType.UPDATE_POST,
 
@@ -73,7 +70,6 @@ export const AddCommentAction =
       postId: id,
       body: comment,
     });
-    console.log(response);
     dispatch({
       type: ActionType.ADD_COMMENT,
       payload: {

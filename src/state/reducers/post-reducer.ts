@@ -42,7 +42,7 @@ const reducer = produce((state: PostState = initialState, action: Action) => {
       });
       return state;
     case ActionType.ADD_COMMENT:
-        state.post.comments.push(action.payload)
+      state.post.comments.push(action.payload);
       return state;
     default:
       return state;
